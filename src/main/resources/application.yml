@@ -1,0 +1,10 @@
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: none
+  datasource:
+    url: 'jdbc:mysql://localhost:3308/coza_store'
+    username: root
+    password: admin123
+server:
+  port: 8081
