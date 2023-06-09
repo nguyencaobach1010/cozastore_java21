@@ -42,4 +42,91 @@ public class ProductEntity {
     @OneToMany(mappedBy = "product")
     private Set<OrderDetailEntity> orderDetails;
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+
+    public String getImageDetail() {
+        return imageDetail;
+    }
+
+    public void setImageDetail(String imageDetail) {
+        this.imageDetail = imageDetail;
+    }
+
+    public SizeEntity getSize() {
+        return size;
+    }
+
+    public void setSize(SizeEntity size) {
+        this.size = size;
+    }
+
+    public ColorEntity getColor() {
+        return color;
+    }
+
+    public void setColor(ColorEntity color) {
+        this.color = color;
+    }
+
+    public CategoryEntity getCategory() {
+        return category;
+    }
+
+    public void setCategory(CategoryEntity category) {
+        this.category = category;
+    }
+
+    public Set<OrderDetailEntity> getOrderDetails() {
+        return orderDetails;
+    }
+
+    public void setOrderDetails(Set<OrderDetailEntity> orderDetails) {
+        this.orderDetails = orderDetails;
+    }
 }

@@ -17,4 +17,36 @@ public class CountryEntity {
 
     @OneToMany(mappedBy = "country")
     private Set<OrderEntity> orders;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public double getPriceShip() {
+        return priceShip;
+    }
+
+    public void setPriceShip(double priceShip) {
+        this.priceShip = priceShip;
+    }
+
+    public Set<OrderEntity> getOrders() {
+        return orders;
+    }
+
+    public void setOrders(Set<OrderEntity> orders) {
+        this.orders = orders;
+    }
 }

@@ -20,4 +20,20 @@ public class TagBlogIds implements Serializable {
         this.tagId = tagId;
         this.blogId = blogId;
     }
+
+    public int getTagId() {
+        return tagId;
+    }
+
+    public void setTagId(int tagId) {
+        this.tagId = tagId;
+    }
+
+    public int getBlogId() {
+        return blogId;
+    }
+
+    public void setBlogId(int blogId) {
+        this.blogId = blogId;
+    }
 }

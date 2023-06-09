@@ -19,4 +19,28 @@ public class CategoryTag {
     @ManyToOne
     @JoinColumn(name = "tag_id", insertable = false,updatable = false)
     private TagEntity tag;
+
+    public CategoryTagIds getIds() {
+        return ids;
+    }
+
+    public void setIds(CategoryTagIds ids) {
+        this.ids = ids;
+    }
+
+    public CategoryEntity getCategory() {
+        return category;
+    }
+
+    public void setCategory(CategoryEntity category) {
+        this.category = category;
+    }
+
+    public TagEntity getTag() {
+        return tag;
+    }
+
+    public void setTag(TagEntity tag) {
+        this.tag = tag;
+    }
 }
