@@ -1,30 +1,20 @@
 package com.cybersoft.coza_store21.entity;
 
 import javax.persistence.*;
+import java.util.Set;
 
-@Entity(name = "COUNTRY")
+@Entity(name = "country")
 public class CountryEntity {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int Id;
+    private int id;
 
     @Column(name = "name")
     private String name;
 
-    public int getId() {
-        return Id;
-    }
+    @Column(name = "price_ship")
+    private double priceShip;
 
-    public void setId(int id) {
-        Id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
+    @OneToMany(mappedBy = "country")
+    private Set<OrderEntity> orders;
 }

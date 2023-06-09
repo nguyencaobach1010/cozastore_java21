@@ -1,15 +1,17 @@
 package com.cybersoft.coza_store21.entity;
 
 import javax.persistence.*;
+import java.util.Set;
 
-@Entity(name = "USER")
+@Entity(name = "user")
 public class UserEntity {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int Id;
+    private int id;
 
-    @Column(name = "userName")
-    private String userName;
+    @Column(name = "username")
+    private String username;
 
     @Column(name = "password")
     private String password;
@@ -17,35 +19,9 @@ public class UserEntity {
     @Column(name = "email")
     private String email;
 
-    public int getId() {
-        return Id;
-    }
+    @OneToMany(mappedBy = "user")
+    private Set<BlogEntity> blogs;
 
-    public void setId(int id) {
-        Id = id;
-    }
-
-    public String getUserName() {
-        return userName;
-    }
-
-    public void setUserName(String userName) {
-        this.userName = userName;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
+    @OneToMany(mappedBy = "user")
+    private Set<OrderEntity> orders;
 }
