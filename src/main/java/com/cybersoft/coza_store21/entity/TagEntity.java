@@ -1,30 +1,21 @@
 package com.cybersoft.coza_store21.entity;
 
 import javax.persistence.*;
+import java.util.Set;
 
-@Entity(name = "TAG")
+@Entity(name = "tag")
 public class TagEntity {
+
     @Id
-    @ManyToOne
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private BlogTagEntity Id;
+    private int id;
 
     @Column(name = "name")
     private String name;
 
-    public BlogTagEntity getId() {
-        return Id;
-    }
+    @OneToMany(mappedBy = "tag")
+    private Set<CategoryTag> categoryTags;
 
-    public void setId(BlogTagEntity id) {
-        Id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
+    @OneToMany(mappedBy = "tag")
+    private Set<TagBlogEntity> tagBlogs;
 }

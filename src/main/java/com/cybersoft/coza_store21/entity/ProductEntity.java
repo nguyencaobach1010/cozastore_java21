@@ -1,38 +1,45 @@
 package com.cybersoft.coza_store21.entity;
 
 import javax.persistence.*;
+import java.util.Set;
 
-@Entity(name = "PRODUCT")
+@Entity(name = "product")
 public class ProductEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int Id;
+    private int id;
+
+    @Column(name = "image")
+    private String image;
 
     @Column(name = "name")
     private String name;
 
     @Column(name = "price")
-    private long price;
-
-    @ManyToOne
-    @JoinColumn(name = "category_id")
-    private CategoryEntity category_id;
+    private double price;
 
     @Column(name = "description")
     private String description;
 
-    @ManyToOne
-    @JoinColumn(name = "size_id")
-    private SizeEntity size_id;
-
-    @ManyToOne
-    @JoinColumn(name = "color_id")
-    private ColorEntity color_id;
-
     @Column(name = "quantity")
     private int quantity;
 
-    @Column(name = "list_image")
-    private String list_image;
+    @Column(name = "image_detail")
+    private String imageDetail;
+
+    @ManyToOne
+    @JoinColumn(name = "size_id")
+    private SizeEntity size;
+
+    @ManyToOne
+    @JoinColumn(name = "color_id")
+    private ColorEntity color;
+
+    @ManyToOne
+    @JoinColumn(name = "category_id")
+    private CategoryEntity category;
+
+    @OneToMany(mappedBy = "product")
+    private Set<OrderDetailEntity> orderDetails;
 
 }
